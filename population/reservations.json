@@ -1,0 +1,37 @@
+[{
+    "_id": {
+        "$oid": "627d60164648d92ee3c481b1"
+    },
+    "mineurId":{
+        "$oid": "627d5ce28c88e4830e9bd106"
+    },
+    "contratId":{
+        "$oid": "627d623ae72e6e238babbbba"
+    },
+    "estTermine": true,
+    "__v": 0
+},{
+    "_id": {
+        "$oid": "627d60287740650baef20caa"
+    },
+    "mineurId":{
+        "$oid": "627d5ce553760926b669e1bd"
+    },
+    "contratId":{
+        "$oid": "627d623d1d5c8280369d7690"
+    },
+    "estTermine": false,
+    "__v": 0
+},{
+    "_id": {
+        "$oid": "627d602c7883eb847f5715df"
+    },
+    "mineurId":{
+        "$oid": "627d5cead02d0730809575e5"
+    },
+    "contratId":{
+        "$oid": "627d5b091b20cc22570fc84d"
+    },
+    "estTermine": false,
+    "__v": 0
+}]

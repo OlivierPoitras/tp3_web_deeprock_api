@@ -1,0 +1,680 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Deep Rock Galactic",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/mineurs/": {
+      "get": {
+        "tags":["Mineurs"],
+        "description": "Obtient tous les mineurs enregistrés",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags":["Mineurs"],
+        "description": "Crée un mineur avec les données fournies, à condition qu'il ait ses cartes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "tony@gmail.ca"
+                },
+                "nom": {
+                  "example": "Tony"
+                },
+                "motdepasse": {
+                  "example": "Soleil123"
+                },
+                "niveau": {
+                  "example": 2
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/mineurs/{mineurId}": {
+      "get": {
+        "tags":["Mineurs"],
+        "description": "Obtient un mineur spécifique",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mineurId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags":["Mineurs"],
+        "description": "Modifie un mineur particulier",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mineurId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "tony456@gmail.ca"
+                },
+                "nom": {
+                  "example": "Tony2"
+                },
+                "motdepasse": {
+                  "example": "Soleil456"
+                },
+                "niveau": {
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags":["Mineurs"],
+        "description": "Supprime un mineur spécifique",
+        "parameters": [
+          {
+            "name": "mineurId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/mineur/whoami": {
+      "tags":["Mineurs"],
+      "get": {
+        "description": "Obtient les informations du mineur connecté",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/contrats/": {
+      "get": {
+        "tags":["Contrats"],
+        "description": "Obtient les contrats enregistrés",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags":["Contrats"],
+        "description": "Crée un contrat",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "planeteId": {
+                  "example": "6260366953cb2638e9e6ea12"
+                },
+                "prime": {
+                  "example": 30
+                },
+                "danger": {
+                  "example": 3
+                },
+                "ressource": {
+                  "example": "Cuivre"
+                },
+                "quantiteRessource": {
+                  "example": 28000
+                },
+                "dateExpiration": {
+                  "example": "2022-09-03T20:42:13.449Z"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/contrats/{contratId}": {
+      "tags":["Contrats"],
+      "get": {
+        "description": "Obtient un contrat spécifique",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "contratId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags":["Contrats"],
+        "description": "Modifie un contrat spécifique",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "contratId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "planeteId": {
+                  "example": "6260366953cb2638e9e6ea12"
+                },
+                "prime": {
+                  "example": 40
+                },
+                "danger": {
+                  "example": 2
+                },
+                "ressource": {
+                  "example": "Uranium"
+                },
+                "quantiteRessource": {
+                  "example": 15000
+                },
+                "dateExpiration": {
+                  "example": "2022-12-08T20:42:13.449Z"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags":["Contrats"],
+        "description": "Supprime un contrat spécifique",
+        "parameters": [
+          {
+            "name": "contratId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags":["Authentification"],
+        "description": "Connecte un utilisateur au site avec son adresse et son mot de passe",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "tony@gmail.ca"
+                },
+                "motdepasse": {
+                  "example": "Soleil123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags":["Authentification"],
+        "description": "Crée un compte de mineur",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "tony3@gmail.ca"
+                },
+                "nom": {
+                  "example": "Tony le Magnifique"
+                },
+                "motdepasse": {
+                  "example": "Soleil789"
+                },
+                "niveau": {
+                  "example": "1"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/planetes/": {
+      "get": {
+        "tags":["Planetes"],
+        "description": "Obtient toutes les planètes exploitées par la compagnie",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags":["Planetes"],
+        "description": "Crée une planète tel un dieu de la galaxie",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "example": "Jarvan IV"
+                },
+                "image": {
+                  "example": "4124790129dad.jpeg"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/planetes/{planeteId}": {
+      "get": {
+        "tags":["Planetes"],
+        "description": "Obtient une planète spécifique",
+        "parameters": [
+          {
+            "name": "planeteId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags":["Planetes"],
+        "description": "Modifie une planète spécifique",
+        "parameters": [
+          {
+            "name": "planeteId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "example": "Jarvan III"
+                },
+                "image": {
+                  "example": "4124790129dad.jpeg"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags":["Planetes"],
+        "description": "Supprime une planète de l'espace spatio-temporel",
+        "parameters": [
+          {
+            "name": "planeteId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "DESTROYED"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/reservation/": {
+      "tags":["Réservation"],
+      "get": {
+        "description": "Obtient les réservations enregistrées",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/reservations/{reservationId}": {
+      "get": {
+        "tags":["Réservation"],
+        "description": "Obtient une réservation spécifique",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "reservationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags":["Réservation"],
+        "description": "Modifie une réservation existante",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "reservationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mineurId": {
+                  "example": "62601019c8c26650c07d088a"
+                },
+                "contratId": {
+                  "example": "625f215f8a316586211ca48e"
+                },
+                "estTermine": {
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags":["Réservation"],
+        "description": "Supprime une réservation",
+        "parameters": [
+          {
+            "name": "reservationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/reservations/{mineurId}/{contratId}": {
+      "post": {
+        "description": "Effectue une réservation du contrat indiqué pour le mineur indiqué",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mineurId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "contratId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "tags":["Recherche"],
+        "description": "Effectue une recherche sur les contrats disponibles",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "danger",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "minPrime",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "maxPrime",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "planeteId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "dateExpiration",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

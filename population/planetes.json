@@ -1,0 +1,24 @@
+[{
+    "_id": {
+        "$oid": "627d5afe6032d084f73d5abf"
+    },
+    "nom":"Sphero Rondo",
+    "image": "6.png",
+    "__v": 0
+},
+{
+    "_id": {
+        "$oid": "627d5b0530761d46c995ea0b"
+    },
+    "nom":"Dangeo Diablo",
+    "image": "3.png",
+    "__v": 0
+},
+{
+    "_id": {
+        "$oid": "627d5b0d9786a68ba12c056c"
+    },
+    "nom":"Terra Plantera",
+    "image": "8.png",
+    "__v": 0
+}]

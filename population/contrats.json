@@ -1,0 +1,43 @@
+[{
+        "_id": {
+            "$oid": "627d623ae72e6e238babbbba"
+        },
+        "planeteId": {
+            "$oid": "627d5afe6032d084f73d5abf"
+        },
+        "prime": 50000,
+        "danger": 2,
+        "ressource": "Diamand rouge et du phosphore",
+        "quantiteRessource": 2500,
+        "dateExpiration": "2502-07-20T20:10:45.449+00:00",
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "627d623d1d5c8280369d7690"
+        },
+        "planeteId": {
+            "$oid": "627d5b0530761d46c995ea0b"
+        },
+        "prime": 100000,
+        "danger": 3,
+        "ressource": "Platinum et oeufs d'araignés",
+        "quantiteRessource": 3000,
+        "dateExpiration": "2700-02-20T19:30:13.449+00:00",
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "627d5b091b20cc22570fc84d"
+        },
+        "planeteId": {
+            "$oid": "627d5b0d9786a68ba12c056c"
+        },
+        "prime": 10000,
+        "danger": 1,
+        "ressource": "Ruby et émeraude",
+        "quantiteRessource": 1000,
+        "dateExpiration": "2305-05-10T10:10:13.449+00:00",
+        "__v": 0
+    }
+]

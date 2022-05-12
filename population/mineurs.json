@@ -1,0 +1,31 @@
+[{
+        "_id": {
+            "$oid": "627d5ce28c88e4830e9bd106"
+        },
+        "email": "robertoAlcanda@gmail.com",
+        "nom": "Roberto Alcanda",
+        "motdepasse": "$2a$12$JXHMWUfVHgriDo.jDXCBbedWByvkkg9iGCF5WCrSJA4dcXJfjsR3S",
+        "niveau": 1,
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "627d5ce553760926b669e1bd"
+        },
+        "email": "DeschampsCompagny@hotmail.ca",
+        "nom": "Steve Deschamps",
+        "motdepasse": "$dad32$JXHMWUdadal2.xfafDb321awByvkkg9iGCF5WCrSJA4dcXJfjsR3S",
+        "niveau": 2,
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "627d5cead02d0730809575e5"
+        },
+        "email": "SylvieArmstrong@outlook.ca",
+        "nom": "Sylvie Armstrong",
+        "motdepasse": "$dd24dd$Jdadani.dck1241ddb321awByvkkg49dCF5WCDss24dD4aXfjsR3S",
+        "niveau": 1,
+        "__v": 0
+    }
+]
