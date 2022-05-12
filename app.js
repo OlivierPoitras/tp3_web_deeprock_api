@@ -6,7 +6,6 @@ var hateoasLinker = require('express-hateoas-links');
 const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-const Mineur = require('../apiDeepRockGalactic/models/mineur');
 
 // Déclaration d'un parser pour analyser "le corps (body)" d'une 'requête entrante avec POST  
 // Permet donc d'analyser
