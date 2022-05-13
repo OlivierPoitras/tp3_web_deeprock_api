@@ -4,7 +4,7 @@ const Reservation = require('../models/reservation');
 
 const dotenv = require('dotenv');
 dotenv.config();
-const url_base = process.env.URL;
+const url_base = process.env.URL.slice(0, -1);
 
 exports.getReservations = (req, res, next) => {
     res.setHeader('content-type', 'application/json');
