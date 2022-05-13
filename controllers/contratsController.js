@@ -4,7 +4,7 @@ const Contrat = require('../models/contrat');
 
 const dotenv = require('dotenv');
 dotenv.config();
-const url_base = process.env.URL + ":" + process.env.PORT;
+const url_base = process.env.URL;
 
 exports.getContrats = (req, res, next) => {
     res.setHeader('content-type', 'application/json');

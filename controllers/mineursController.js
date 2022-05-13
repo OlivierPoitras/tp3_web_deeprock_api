@@ -4,7 +4,7 @@ const Mineur = require('../models/mineur');
 
 const dotenv = require('dotenv');
 dotenv.config();
-const url_base = process.env.URL + ":" + process.env.PORT || 3000;
+const url_base = process.env.URL;
 
 exports.getMineurs = (req, res, next) => {
     res.setHeader('content-type', 'application/json');
